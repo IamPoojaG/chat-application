@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import connectDB from './config/connectDB.js';
 import router from './routes/index.js';
+import cookiesParser from 'cookie-parser';
 
 dotenv.config();
 const app = express();
@@ -15,6 +16,8 @@ app.use(
 );
 
 app.use(express.json());
+app.use(cookiesParser());
+
 const PORT = process.env.PORT || 8080;
 
 app.get('/', (request, response) => {
