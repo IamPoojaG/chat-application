@@ -51,7 +51,7 @@ const RegisterPage = () => {
     e.stopPropagation();
 
     const URL = `${process.env.REACT_APP_BACKEND_URL}/api/register`;
-
+    console.log(process.env);
     try {
       const response = await axios.post(URL, data);
       console.log('response', response);
@@ -71,7 +71,6 @@ const RegisterPage = () => {
     } catch (error) {
       toast.error(error?.response?.data?.message);
     }
-    console.log('data', data);
   };
 
   return (

@@ -5,9 +5,9 @@ import cors from 'cors';
 import connectDB from './config/connectDB.js';
 import router from './routes/index.js';
 import cookiesParser from 'cookie-parser';
-
+import { app, server } from './socket/index.js';
 dotenv.config();
-const app = express();
+// const app = express();
 app.use(
   cors({
     origin: process.env.FRONTEND_URL,
@@ -29,5 +29,5 @@ app.get('/', (request, response) => {
 //api end points
 app.use('/api', router);
 connectDB().then(() => {
-  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+  server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 });

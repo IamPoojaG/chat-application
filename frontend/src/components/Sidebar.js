@@ -5,8 +5,6 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { BiLogOut } from 'react-icons/bi';
 import Avatar from './Avatar';
 import { useDispatch, useSelector } from 'react-redux';
-import EditUserDetails from './EditUserDetails';
-// import Divider from './Divider';
 import { FiArrowUpLeft } from 'react-icons/fi';
 import SearchUser from './SearchUser';
 import { FaImage } from 'react-icons/fa6';
@@ -15,7 +13,7 @@ import { logout } from '../redux/userSlice';
 
 const Sidebar = () => {
   const user = useSelector((state) => state?.user);
-  const [editUserOpen, setEditUserOpen] = useState(false);
+
   const [allUser, setAllUser] = useState([]);
   const [openSearchUser, setOpenSearchUser] = useState(false);
   const socketConnection = useSelector(
@@ -88,11 +86,7 @@ const Sidebar = () => {
         </div>
 
         <div className='flex flex-col items-center'>
-          <button
-            className='mx-auto'
-            title={user?.name}
-            onClick={() => setEditUserOpen(true)}
-          >
+          <button className='mx-auto' title={user?.name}>
             <Avatar
               width={40}
               height={40}
@@ -184,11 +178,6 @@ const Sidebar = () => {
           })}
         </div>
       </div>
-
-      {/**edit user details*/}
-      {editUserOpen && (
-        <EditUserDetails onClose={() => setEditUserOpen(false)} user={user} />
-      )}
 
       {/**search user */}
       {openSearchUser && (

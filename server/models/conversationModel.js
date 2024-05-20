@@ -47,9 +47,6 @@ const conversationSchema = new mongoose.Schema(
 
 const MessageModel = mongoose.model('Message', messageSchema); // Message is the name of the collection in the database
 
-const conversationModel = mongoose.model('Conversation', conversationSchema); // Conversation is the name of the collection in the database
+const ConversationModel = mongoose.model('Conversation', conversationSchema); // Conversation is the name of the collection in the database
 
-export default {
-  MessageModel,
-  conversationModel,
-};
+export { MessageModel, ConversationModel };

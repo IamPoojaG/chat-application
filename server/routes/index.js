@@ -28,6 +28,6 @@ router.get('/logout', logout);
 router.post('/update-user', updateUserDetails);
 
 //search  user
-router.get('/search-user', searchUser);
+router.post('/search-user', searchUser);
 
 export default router;

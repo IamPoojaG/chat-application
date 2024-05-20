@@ -18,7 +18,6 @@ const Home = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  console.log('user', user);
   const fetchUserDetails = async () => {
     try {
       const URL = `${process.env.REACT_APP_BACKEND_URL}/api/user-details`;
@@ -33,9 +32,8 @@ const Home = () => {
         dispatch(logout());
         navigate('/email');
       }
-      console.log('current user Details', response);
     } catch (error) {
-      console.log('error', error);
+      // console.log('error', error);
     }
   };
 
@@ -45,7 +43,6 @@ const Home = () => {
 
   /***socket connection */
   useEffect(() => {
-    console.log(process.env.REACT_APP_BACKEND_URL);
     const socketConnection = io(process.env.REACT_APP_BACKEND_URL, {
       auth: {
         token: localStorage.getItem('token'),

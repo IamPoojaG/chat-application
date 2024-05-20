@@ -10,7 +10,6 @@ import { FaVideo } from 'react-icons/fa6';
 import uploadFile from '../helpers/uploadFile';
 import { IoClose } from 'react-icons/io5';
 import Loading from './Loading';
-import backgroundImage from '../assets/wallpaper.jpg';
 import { IoMdSend } from 'react-icons/io';
 import moment from 'moment';
 
@@ -19,6 +18,7 @@ const MessagePage = () => {
   const socketConnection = useSelector(
     (state) => state?.user?.socketConnection
   );
+
   const user = useSelector((state) => state?.user);
   const [dataUser, setDataUser] = useState({
     name: '',
@@ -150,7 +150,7 @@ const MessagePage = () => {
 
   return (
     <div
-      style={{ backgroundImage: `url(${backgroundImage})` }}
+      style={{ backgroundColor: '#cae9f6' }}
       className='bg-no-repeat bg-cover'
     >
       <header className='sticky top-0 h-16 bg-white flex justify-between items-center px-4'>
