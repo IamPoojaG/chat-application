@@ -1,11 +1,15 @@
+import { Outlet } from 'react-router-dom';
 import './App.css';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
-    <div className='App'>
-      <h1>hi welcome home</h1>
-    </div>
+    <>
+      <Toaster />
+      <main>
+        <Outlet />
+      </main>
+    </>
   );
 }
-
 export default App;
