@@ -38,6 +38,10 @@ const Home = () => {
   };
 
   useEffect(() => {
+    if (!localStorage.getItem('token')) {
+      dispatch(logout());
+      navigate('/email');
+    }
     fetchUserDetails();
   }, []);
 
