@@ -7,7 +7,9 @@ A chat application is a software that allows people to communicate with each oth
 To run frontend
 
 cd frontend
+
 npm i
+
 npm start
 
 ## Server or backend
@@ -15,7 +17,9 @@ npm start
 To run server or backend
 
 cd server
+
 npm i
+
 npm run dev
 
 ## Demo credential
@@ -29,12 +33,15 @@ Or else you can register it may take 15 secs.
 ## Server .env file
 
 FRONTEND_URL = <Frontend URL>
+
 MONGODB_URI = <Mongodb URI>
+
 JWT_SECREAT_KEY = <JWT Secreat Key>
 
 ## front-end .env file
 
 REACT_APP_CLOUDINARY_CLOUD_NAME = <Cloudinary cloud name>
+
 REACT_APP_BACKEND_URL = <Backend URL>
 
 ## Tech Stack
